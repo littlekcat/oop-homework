@@ -147,13 +147,21 @@ public:
         }
     }
 
-    int get(int row, int col) const {
+    int get_row_size() {
+        return initialized? row_size:0;
+    }
+
+    int get_col_size() {
+        return initialized? col_size:0;
+    }
+
+    int get_num(int row, int col) const {
         if(initialized) {
             return cells[row][col];
         }
     }
 
-    void set(int row, int col, int num) {
+    void set_num(int row, int col, int num) {
         if(initialized) {
             cells[row][col] = num;
         }

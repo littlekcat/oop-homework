@@ -31,6 +31,18 @@ class Grid:
             for j in range(self.col_size):
                 self.cells[i][j] = next(it)
 
+    def get_row_size():
+        if self.initialized
+            return row_size
+        else
+            return 0
+
+    def get_col_size():
+        if self.initialized
+            return col_size
+        else
+            return 0
+
     def get_num(self, row, col):
         if self.initialized:
             return self.cells[row][col]
