@@ -134,8 +134,14 @@ class Sudoku(Grid):
 def main():
     print("-------------------get_all_candidates test-------------------")
     input_data = "017903600000080000900000507072010430000402070064370250701000065000030000005601720"
+    input_data2 = "300967001040302080020000070070000090000873000500010003004705100905000207800621004"
     sudoku = Sudoku(9, input_data)
+    sudoku2 = Sudoku(9, input_data2)
+    print()
     sudoku.print()
+    print()
+    sudoku2.print()
+    print()
     print(sudoku.get_all_candidates())
 
     print("\n\n-------------------copy test-------------------")

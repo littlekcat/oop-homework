@@ -269,10 +269,13 @@ public:
 
 int main() {
     std::string input = "017903600000080000900000507072010430000402070064370250701000065000030000005601720";
+    std::string input2 = "300967001040302080020000070070000090000873000500010003004705100905000207800621004";
 
     std::cout << "--------------get_candidates test--------------\n";
     Sudoku s(9, input);
+    Sudoku d(9,input2);
     s.print();
+    d.print();
     s.get_candidates(0,0);
     s.get_candidates(0,4);
     std::vector<std::vector<std::vector<int>>> ans = s.get_all_candidates();
