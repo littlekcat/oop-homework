@@ -30,17 +30,31 @@ class Grid:
         for i in range(self.row_size):
             for j in range(self.col_size):
                 self.cells[i][j] = next(it)
+    
+    #深拷贝
+    def copy(self, grid):
+        self.cells = []
+        self.row_size = grid.row_size
+        self.col_size = grid.col_size
+        self.initialized = grid.initialized
+        if grid.initialized:
+            for i in grid.cells:
+                tmp = []
+                for j in i:
+                    tmp.append(j)
+                self.cells.append(tmp)
 
-    def get_row_size():
-        if self.initialized
-            return row_size
-        else
+
+    def get_row_size(self):
+        if self.initialized:
+            return self.row_size
+        else:
             return 0
 
-    def get_col_size():
-        if self.initialized
-            return col_size
-        else
+    def get_col_size(self):
+        if self.initialized:
+            return self.col_size
+        else:
             return 0
 
     def get_num(self, row, col):
@@ -123,6 +137,11 @@ def main():
     sudoku = Sudoku(9, input_data)
     sudoku.print()
     print(sudoku.get_all_candidates())
+
+    print("\n\n-------------------copy test-------------------")
+    a = Sudoku()
+    a.copy(sudoku)
+    a.print()
 
     print("\n\n-------------------serialize test-------------------")
     serialized_data = sudoku.serialize()
