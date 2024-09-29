@@ -15,6 +15,9 @@
 - `initialize(self)`: 初始化`cells`为指定大小的零矩阵。
 - `serialize(self)`: 将表格数据序列化为列表，包含行、列和表格数据。
 - `deserialize(self, data)`: 从序列化数据恢复表格状态。
+- `copy(self, grid)`: 类的深拷贝
+- `get_row_size(self)`: 返回网格的行数。
+- `get_col_size(self)`: 返回网格的列数。
 - `get_num(self, row, col)`: 获取指定单元格的数值。
 - `set_num(self, row, col, num)`: 设置指定单元格的数值。
 - `print(self)`: 打印当前表格。
