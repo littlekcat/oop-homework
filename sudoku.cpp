@@ -81,7 +81,7 @@ public:
         return *this;
     }
 
-    void checkRowAndCol(const int row,  const int col) const {
+    void check_row_col(const int row,  const int col) const {
         if(row < 0 || row >= row_size) throw std::invalid_argument("Invalid row");
         if(col < 0 || col >= col_size) throw std::invalid_argument("Invalid col");
     }
@@ -147,7 +147,6 @@ public:
         }
     }
 
-
     int get(int row, int col) const {
         if(initialized) {
             return cells[row][col];
@@ -209,7 +208,7 @@ public:
     //指定行和列进行推理
     std::vector<int> get_candidates(int row, int col) const {
 
-        checkRowAndCol(row, col);
+        check_row_col(row, col);
 
         if(row < 0 || row >= size) throw std::invalid_argument("Invalid row");
         if(col < 0 || col >=size) throw std::invalid_argument("Invalid col");
@@ -282,7 +281,11 @@ int main() {
         std::cout << "]\n";
     }
 
+    std::cout << "\n\n---------------copy test---------------\n";
     Sudoku a(9, input);
+    Sudoku b;
+    b = a;
+    b.print();
 
     std::cout << "\n\n---------------serialize test---------------\n";
     char* data = new char[1000];
